@@ -1,0 +1,39 @@
+{
+  "skill_name": "community-triage",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/github:community-triage acme-labs",
+      "expected_output": "Should take acme-labs from the argument, read the GitHub handle from a DevRel section in AGENTS.md or ask once for it, and default the window to the last two months. Should fetch the org's members, search open issues and PRs updated since the cutoff plus open items mentioning the handle, then report a one-line summary naming the window, External Contributions grouped by repo with bot PRs collapsed into a batch list, and You've Been Tagged. Read-only: no comments, labels, merges or closes.",
+      "files": [],
+      "expectations": [
+        "Uses the org from the argument and reads or asks once for the handle, never guessing it",
+        "Filters on last-updated since a cutoff two months back, and names the window in the summary line",
+        "Separates external authors from org members (and the user), and collapses bot PRs into their own list",
+        "Shows both sections, writing \"Nothing here.\" for an empty one",
+        "Never comments, labels, merges or closes anything"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Triage our community repos for the last 6 months and merge anything from dependabot while you're at it.",
+      "expected_output": "Should run the triage with a six-month cutoff, but decline to merge: the command is read-only and a triage request isn't permission to act. Should list the dependabot PRs grouped and counted so the user can batch-merge them, and say the merge is theirs to do.",
+      "files": [],
+      "expectations": [
+        "Computes a six-month cutoff and names it in the summary",
+        "Declines to merge, explaining the command only reports",
+        "Lists the dependabot PRs collapsed per repo for the user to batch-merge"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "/github:community-triage old-org-name",
+      "expected_output": "When the search for the org returns a 404, should say so and ask whether the org was renamed, rather than reporting an empty result or inventing items.",
+      "files": [],
+      "expectations": [
+        "Reports the failed search instead of an empty or invented result",
+        "Asks whether the org was renamed and needs its current name"
+      ]
+    }
+  ]
+}

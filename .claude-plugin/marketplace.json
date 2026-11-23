@@ -1,0 +1,14 @@
+{
+  "name": "workflow-skills",
+  "owner": {
+    "name": "Timonwa"
+  },
+  "description": "Claude skills for the everyday work around the code and the writing, grouped by the tool each one works with. First up: GitHub commands that draft your daily standup and triage community issues and pull requests.",
+  "plugins": [
+    {
+      "name": "github",
+      "source": "./plugins/github",
+      "description": "Two GitHub commands you run when you need them: draft your daily standup from yesterday's activity, and find the issues and pull requests from people outside your orgs, plus where you've been tagged."
+    }
+  ]
+}

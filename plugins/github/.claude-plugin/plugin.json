@@ -1,0 +1,22 @@
+{
+  "name": "github",
+  "displayName": "GitHub Workflow Skills",
+  "description": "Two GitHub commands you run when you need them: draft your daily standup from yesterday's activity, and find the issues and pull requests from people outside your orgs, plus where you've been tagged.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Timonwa"
+  },
+  "homepage": "https://github.com/Timonwa/workflow-skills",
+  "repository": "https://github.com/Timonwa/workflow-skills",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "daily-standup",
+    "standup",
+    "community",
+    "triage",
+    "devrel",
+    "issues",
+    "pull-requests"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "workflow-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Claude skills for the everyday work around the code and the writing: standups, community triage and more.",
+  "license": "MIT",
+  "repository": "github:Timonwa/workflow-skills",
+  "packageManager": "pnpm@11.1.1",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "claude plugin validate . --strict",
+    "check:skills": "node scripts/check-skills.mjs"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6"
+  }
+}

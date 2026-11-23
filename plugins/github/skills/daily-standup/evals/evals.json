@@ -1,0 +1,39 @@
+{
+  "skill_name": "daily-standup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/github:daily-standup",
+      "expected_output": "Should resolve the handle, orgs and destination from a DevRel section in AGENTS.md (or ask once), work out the previous weekday (Friday on a Monday), fetch that day's involved activity and today's authored items, then ask all four questions in one message: the last posted Today section, what from it actually happened, anything not on GitHub, and today's plan. Only after the answers, output the standup in a fenced text block, describing work in its own words rather than restating PR titles, and never posting it.",
+      "files": [],
+      "expectations": [
+        "Uses the previous weekday, never a Saturday or Sunday",
+        "Asks the four questions in a single message before writing the standup",
+        "Includes only work the user confirms; GitHub activity is evidence, not fact",
+        "Describes each item in its own words, never restating the PR or issue title",
+        "Outputs a copy-ready fenced text block and never posts it"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's yesterday's standup, can you clean it up? \n* fixed the thing in billing #212\n* reviewed sarah's pr\n* started the docs series",
+      "expected_output": "Should take the improve-an-existing-daily path: skip fetching GitHub and the questions, and reformat only what was given. Should rewrite each line as a clear sentence, keep links the user gave, expand only where there's evidence of parts, and not invent activity, numbers or sub-steps.",
+      "files": [],
+      "expectations": [
+        "Doesn't fetch GitHub or ask the four questions",
+        "Rewrites only the items given, without inventing work or sub-steps",
+        "Keeps the format: fenced text block, bullets of at most two lines"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "/github:daily-standup 2026-11-20 and post it to Slack for me",
+      "expected_output": "Should report on 20 November as given, gather activity and ask the four questions, then output the standup in a fenced block for the user to paste — declining to post it to Slack, since the command never posts.",
+      "files": [],
+      "expectations": [
+        "Uses the given date instead of the previous weekday",
+        "Declines to post to Slack and outputs the standup for the user to paste"
+      ]
+    }
+  ]
+}
