@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "/github:daily-standup",
+      "prompt": "/devrel:daily-standup",
       "expected_output": "Should resolve the handle, orgs and destination from a DevRel section in AGENTS.md (or ask once), work out the previous weekday (Friday on a Monday), fetch that day's involved activity and today's authored items, then ask all four questions in one message: the last posted Today section, what from it actually happened, anything not on GitHub, and today's plan. Only after the answers, output the standup in a fenced text block, describing work in its own words rather than restating PR titles, and never posting it.",
       "files": [],
       "expectations": [
@@ -27,7 +27,7 @@
     },
     {
       "id": 3,
-      "prompt": "/github:daily-standup 2026-11-20 and post it to Slack for me",
+      "prompt": "/devrel:daily-standup 2026-11-20 and post it to Slack for me",
       "expected_output": "Should report on 20 November as given, gather activity and ask the four questions, then output the standup in a fenced block for the user to paste — declining to post it to Slack, since the command never posts.",
       "files": [],
       "expectations": [

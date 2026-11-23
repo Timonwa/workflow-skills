@@ -126,5 +126,5 @@ The finished standup in a fenced code block in chat, nothing written to disk, no
 ## Boundaries
 
 - **Never posts anywhere**, and never asserts work you haven't confirmed. Activity in a repository is evidence of activity, not of progress you'd claim to a team.
-- **Triaging external contributions and mentions** → `/github:community-triage`.
+- **Triaging external contributions and mentions** → `/devrel:community-triage`.
 - **Which handle, which orgs and where the update goes** come in as arguments, or from wherever the project records them for agents.

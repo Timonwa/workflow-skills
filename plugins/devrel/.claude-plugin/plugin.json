@@ -1,6 +1,6 @@
 {
-  "name": "github",
-  "displayName": "GitHub Workflow Skills",
+  "name": "devrel",
+  "displayName": "DevRel Workflow Skills",
   "description": "Two GitHub commands you run when you need them: draft your daily standup from yesterday's activity, and find the issues and pull requests from people outside your orgs, plus where you've been tagged.",
   "version": "1.0.0",
   "author": {

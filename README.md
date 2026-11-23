@@ -19,11 +19,11 @@ Claude skills for the everyday work around the code and the writing, starting wi
 
 ## The plugins
 
-Skills are grouped by the tool they work with.
+Skills are grouped by the work they support.
 
-| Plugin   | For                 | Install it if you                                                                |
-| -------- | ------------------- | -------------------------------------------------------------------------------- |
-| `github` | Your work on GitHub | Post a daily standup, or look after issues and pull requests from your community |
+| Plugin   | For                      | Install it if you                                                                |
+| -------- | ------------------------ | -------------------------------------------------------------------------------- |
+| `devrel` | Developer relations work | Post a daily standup, or look after issues and pull requests from your community |
 
 ## How the skills work
 
@@ -46,7 +46,7 @@ The commands call GitHub from the shell, so they run in Claude Code, not the Cla
 
    ```shell
    /plugin marketplace add Timonwa/workflow-skills
-   /plugin install github@workflow-skills
+   /plugin install devrel@workflow-skills
    ```
 
 When it asks for a scope, pick one:
@@ -71,8 +71,8 @@ Add a **DevRel** section to your project's `AGENTS.md` so the commands don't hav
 
 | Command                                    | Use it to                                                                                       |
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| `/github:daily-standup [date] [orgs]`      | Draft your standup from the previous weekday's GitHub activity and your answers, ready to paste |
-| `/github:community-triage [orgs] [window]` | See open issues and pull requests from people outside your orgs, and where you've been tagged   |
+| `/devrel:daily-standup [date] [orgs]`      | Draft your standup from the previous weekday's GitHub activity and your answers, ready to paste |
+| `/devrel:community-triage [orgs] [window]` | See open issues and pull requests from people outside your orgs, and where you've been tagged   |
 
 - `daily-standup` reports on the previous weekday (Friday on a Monday) unless you give a date. It asks for your last standup and today's plan, and includes only the work you confirm. Paste an old standup instead, and it tidies that one without checking GitHub.
 - `community-triage` looks at the last two months unless you give a window, such as `last 6 months`. It lists bot pull requests apart, so you can merge them in one go.
