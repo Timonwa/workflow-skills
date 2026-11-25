@@ -3,7 +3,7 @@
   "owner": {
     "name": "Timonwa"
   },
-  "description": "Claude skills for the everyday work around the code and the writing, grouped by the work they support. First up: DevRel commands that draft your daily standup and triage community issues and pull requests.",
+  "description": "Agent skills for the everyday work around the code and the writing, grouped by the work they support. First up: DevRel commands that draft your daily standup and triage community issues and pull requests.",
   "plugins": [
     {
       "name": "devrel",
