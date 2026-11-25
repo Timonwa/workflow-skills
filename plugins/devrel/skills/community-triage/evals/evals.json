@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "/devrel:community-triage acme-labs",
+      "prompt": "/community-triage acme-labs",
       "expected_output": "Should take acme-labs from the argument, read the GitHub handle from a DevRel section in AGENTS.md or ask once for it, and default the window to the last two months. Should fetch the org's members, search open issues and PRs updated since the cutoff plus open items mentioning the handle, then report a one-line summary naming the window, External Contributions grouped by repo with bot PRs collapsed into a batch list, and You've Been Tagged. Read-only: no comments, labels, merges or closes.",
       "files": [],
       "expectations": [
@@ -27,7 +27,7 @@
     },
     {
       "id": 3,
-      "prompt": "/devrel:community-triage old-org-name",
+      "prompt": "/community-triage old-org-name",
       "expected_output": "When the search for the org returns a 404, should say so and ask whether the org was renamed, rather than reporting an empty result or inventing items.",
       "files": [],
       "expectations": [

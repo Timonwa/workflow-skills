@@ -96,5 +96,5 @@ Printed to chat, nothing written to disk. Start with a one-line summary count th
 ## Boundaries
 
 - **Never acts on the items it finds** — no comments, labels, merges or closes. It reports and stops.
-- **Preparing your own standup from your activity** → `/devrel:daily-standup`.
+- **Preparing your own standup from your activity** → `/daily-standup`.
 - **Which handle and which orgs to watch** come in as arguments, or from wherever the project records them for agents. Nothing is inferred from a git remote alone, and nothing is assumed about which orgs you have standing to triage.
