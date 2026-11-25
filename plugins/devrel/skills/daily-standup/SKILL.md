@@ -9,6 +9,8 @@ allowed-tools: Bash(gh api:*), Bash(date:*), Read, Grep
 
 # Daily standup
 
+**Run this only when the user asks for it by name. It reads GitHub and drafts the standup in chat; it never posts it, and writes nothing to disk.**
+
 Build the user's daily standup — previous-day recap plus today's plan — from real GitHub activity and their own answers, formatted ready to paste into the team channel.
 
 ## Arguments
@@ -39,7 +41,7 @@ Call the resolved values `HANDLE`, `ORGS`, and the destination `DEST` below.
 
 ## Step 1 — Work out the dates
 
-Today is the date in the system context (or `date +%Y-%m-%d` via Bash if unsure). The "previous day" is the most recent weekday before today:
+Today is the date in the system context (or `date +%Y-%m-%d` in the shell if unsure). The "previous day" is the most recent weekday before today:
 
 - Today is Monday → previous day = last Friday.
 - Today is Tuesday–Friday → previous day = yesterday.
@@ -49,7 +51,7 @@ A `date` argument or an explicit range in the user's message overrides this. For
 
 ## Step 2 — Fetch the previous day's activity
 
-For each org in `ORGS`, run both queries; run all of them in parallel, substituting real dates for `PREVIOUS_DATE`/`TODAY_DATE`:
+For each org in `ORGS`, run both queries, all of them in parallel if your agent can and otherwise one after another, substituting real dates for `PREVIOUS_DATE`/`TODAY_DATE`:
 
 ```bash
 gh api "search/issues?q=involves:HANDLE+org:ORG+updated:PREVIOUS_DATE&per_page=30" --jq '.items[] | "\(.number) \(.title) \(.html_url) \(.pull_request.url // "issue")"'
