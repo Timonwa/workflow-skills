@@ -9,6 +9,8 @@ allowed-tools: Bash(gh api:*), Bash(gh search:*), Bash(date:*), Read, Grep
 
 # Community triage
 
+**Run this only when the user asks for it by name. It reads GitHub and reports in chat; it never comments, labels, merges or closes anything.**
+
 Sweep the configured GitHub orgs for open issues and PRs that need DevRel attention — external contributions and items where the user has been tagged — and present a tight two-section report.
 
 ## Arguments
@@ -44,7 +46,7 @@ Call this `CUTOFF` and apply `--updated ">=CUTOFF"` to every search in Steps 2 a
 
 ## Step 1 — Fetch org members dynamically
 
-For each org in `ORGS`, run these in parallel:
+For each org in `ORGS`, run these, in parallel if your agent can:
 
 ```bash
 gh api orgs/ORG/members --paginate --jq '[.[].login | ascii_downcase]'
@@ -54,7 +56,7 @@ Combine the arrays into a single deduplicated set of known internal members. Alw
 
 ## Step 2 — Fetch issues and PRs active in the window
 
-For each org, run both searches; run all of them in parallel (substitute `CUTOFF` from Step 0):
+For each org, run both searches, all of them in parallel if your agent can (substitute `CUTOFF` from Step 0):
 
 ```bash
 gh search issues --owner ORG --state open --updated ">=CUTOFF" --limit 100 --json number,title,author,repository,url,createdAt,updatedAt,labels,isPullRequest
@@ -69,7 +71,7 @@ For each org, find open issues/PRs where the user has been mentioned (note the g
 gh search issues --mentions HANDLE --owner ORG --state open --updated ">=CUTOFF" --limit 50 --json number,title,author,repository,url,createdAt,updatedAt
 ```
 
-Run these in parallel too.
+Run these in parallel too, where your agent can.
 
 ## Step 4 — Filter and present
 
