@@ -48,7 +48,7 @@ npx skills add Timonwa/workflow-skills
 
 [`npx skills`](https://github.com/vercel-labs/skills) asks which skills to install and which agents to install them for, and installs them in the current project. Add `-g` to install them for every project. To get the latest changes, run `npx skills update`.
 
-Without Node, copy the folders inside `plugins/devrel/skills/` into `.agents/skills/` in your project, or `~/.agents/skills/` for every project. Many agents read that folder. For the rest, use the skills folder your agent's docs name. To update, copy them again from the latest version of this repo.
+Without Node, copy the folders inside `plugins/devrel/skills/` into `.agents/skills/` in your project, or `~/.agents/skills/` for every project. Many agents read that folder. For the rest, use the skills folder your agent's docs name.
 
 ## Set up
 
@@ -78,7 +78,7 @@ Issues and pull requests are welcome, especially for a command that misreads you
 
 - Change one skill where you can.
 - Update its `evals/evals.json`.
-- Keep `SKILL.md` under 200 lines and its description under 550 characters, and give a new skill a name no other set uses.
+- Keep `SKILL.md` under 200 lines and its description under 550 characters, and give a new skill a name no other skill uses. Longer material goes in the skill's `references/` folder, which the agent reads only when it needs it.
 - Run the checks:
 
 | Script              | Use it to                                                                                                                                     | Needs                       |
@@ -88,11 +88,13 @@ Issues and pull requests are welcome, especially for a command that misreads you
 | `pnpm check:skills` | Check every skill against the Agent Skills rules and the house limits: 200 lines, a 550-character description, and a name no other skill uses | Node                        |
 | `pnpm validate`     | Validate the Claude Code marketplace and plugin manifests                                                                                     | the Claude Code CLI on PATH |
 
+The skills are Markdown, so there's no build step, and Prettier is the only dependency. Without installing it, run `pnpm dlx prettier --write .` instead.
+
 ## Support
 
-If these skills save you time, [buy me a coffee](https://buymeacoffee.com/timonwa).
+If these skills save you time, [star the repo](https://github.com/Timonwa/workflow-skills) so other developers can find it, or [buy me a coffee](https://buymeacoffee.com/timonwa).
 
-For building web apps, see [engineering-skills](https://github.com/Timonwa/engineering-skills). For writing docs, see [technical-writing-skills](https://github.com/Timonwa/technical-writing-skills). For blog posts, newsletters and social posts, see [content-writing-skills](https://github.com/Timonwa/content-writing-skills).
+For documentation, see [technical-writing-skills](https://github.com/Timonwa/technical-writing-skills). For blog posts, newsletters and social posts, see [content-writing-skills](https://github.com/Timonwa/content-writing-skills). For web apps built with Next.js, React and Firebase, see [engineering-skills](https://github.com/Timonwa/engineering-skills).
 
 ## License
 
