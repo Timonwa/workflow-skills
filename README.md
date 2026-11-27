@@ -27,7 +27,7 @@ Skills are grouped by the work they support.
 
 ## How the skills work
 
-- Commands run only when you call them.
+- Commands are the tasks you run by name. Your agent can also run one when a task needs it.
 - They read from GitHub through its command-line tool (`gh`) and report in the chat. They never comment, merge, close or post anything.
 - Your GitHub handle and the orgs to watch come from the command's arguments or your project's `AGENTS.md`. Without either, the command asks once.
 - Nothing is reported that GitHub didn't return, and nothing goes in your standup that you didn't confirm.

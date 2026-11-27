@@ -1,15 +1,14 @@
 ---
 name: community-triage
 description: >-
-  Manually invoked. Triages external community contributions and mentions across the GitHub orgs you monitor — fetches org members to separate external authors from internal, filters on last-updated within a window, collapses bot PRs into a batch-merge list, and reports External Contributions grouped by repo plus You've Been Tagged. Read-only; never comments, merges or closes.
+  A command. Triages external community contributions and mentions across the GitHub orgs you monitor — fetches org members to separate external authors from internal, filters on last-updated within a window, collapses bot PRs into a batch-merge list, and reports External Contributions grouped by repo plus You've Been Tagged. Read-only; never comments, merges or closes.
 argument-hint: "[orgs] [window, e.g. last 6 months]"
-disable-model-invocation: true
 allowed-tools: Bash(gh api:*), Bash(gh search:*), Bash(date:*), Read, Grep
 ---
 
 # Community triage
 
-**Run this only when the user asks for it by name. It reads GitHub and reports in chat; it never comments, labels, merges or closes anything.**
+**The user usually runs this by name, and an agent can run it too when the work needs this check. It reads GitHub and reports in chat; it never comments, labels, merges or closes anything.**
 
 Sweep the configured GitHub orgs for open issues and PRs that need DevRel attention — external contributions and items where the user has been tagged — and present a tight two-section report.
 

@@ -1,15 +1,14 @@
 ---
 name: daily-standup
 description: >-
-  Manually invoked. Prepares a daily standup update from your GitHub activity across the orgs you work in — resolves the previous weekday, fetches authored and reviewed activity, reconciles it against your answers to four questions, then formats a copy-paste-ready update for wherever the team posts. Use on "daily standup", "daily update", "what did I do yesterday". Never posts, and never claims work you have not confirmed.
+  A command. Prepares a daily standup update from your GitHub activity across the orgs you work in — resolves the previous weekday, fetches authored and reviewed activity, reconciles it against your answers to four questions, then formats a copy-paste-ready update for wherever the team posts. Use on "daily standup", "daily update", "what did I do yesterday". Never posts, and never claims work you have not confirmed.
 argument-hint: "[date] [orgs]"
-disable-model-invocation: true
 allowed-tools: Bash(gh api:*), Bash(date:*), Read, Grep
 ---
 
 # Daily standup
 
-**Run this only when the user asks for it by name. It reads GitHub and drafts the standup in chat; it never posts it, and writes nothing to disk.**
+**The user usually runs this by name, and an agent can run it too when the work needs this check. It reads GitHub and drafts the standup in chat; it never posts it, and writes nothing to disk.**
 
 Build the user's daily standup — previous-day recap plus today's plan — from real GitHub activity and their own answers, formatted ready to paste into the team channel.
 
